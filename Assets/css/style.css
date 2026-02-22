@@ -1,0 +1,400 @@
+/*All pages-------------------------------------------------------*/
+html, body {
+    margin: 0;
+    min-height: 100%; /*If min height isn't used it wont' expand for longer pages*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overscroll-behavior: none;
+    font-family: monospace;
+}
+/*There can only be one*/
+body {
+    background: linear-gradient(135deg, #ff00ff, #0000ff);
+}
+
+:root {
+  --width-match: min(1210px, 90%);
+}
+
+p, li {
+    font-size: 20px;
+    font-family: "Roboto";
+}
+
+figure {
+    text-align: center;
+}
+
+/*Landing page-------------------------------------------------------*/
+.card {
+    max-width: min(1210px, 90%);
+    min-height: 70vh;
+    margin: 0 auto;          
+    border-radius: 24px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 2rem;
+    background: white;
+    font-family: "Playfair Display";
+}
+
+.card a:link, .card a:hover, .card a:visited {
+    color: #8706c0;
+    padding: 1rem;
+}
+
+.card h1 {
+    font-size: 3.75rem;
+}
+
+.card h2 {
+    font-size: 2rem;
+    padding-bottom: 4rem;
+}
+
+.subcards {
+    display: flex;
+    flex-wrap: nowrap; /*many men*/ 
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: stretch;
+    gap: 2rem;
+    scrollbar-gutter: stable;
+}
+
+.card-link{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Card link is basic link behavior for the sub-cards*/
+/*The sub-card design is essentially the box with an image, the label goes above it*/
+/*The label holds the text and then the overlay goes on top it all darkening the text*/
+/*And the image behind it, it's a lot of voodoo but that's just how I got it to work*/
+
+.it-subcard {
+    flex: 0 0 250px;
+    min-height: 375px;
+    position: relative; /*Put the label in the basket*/
+
+    margin: 0;
+    border-radius: 24px;
+    color: rgba(200, 200, 200, 0.9);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.it-subcard a {
+  text-decoration: none;
+}
+
+.it-subcard a:link, .it-subcard a:hover, .it-subcard a:visited {
+    color: inherit;
+}
+
+.it-subcard a:active .it-label { /*Little flash*/
+    color: rgb(228, 6, 206);
+}
+
+.it-subcard .it-img {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.it-subcard .it-img img {
+    width: 120%;
+    height: auto;        
+}
+
+.it-subcard .it-label {
+    position: absolute;
+    left: -0.7rem;
+    top: -9rem;
+    font-size: 30rem;
+}
+
+.it-subcard .it-label .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.3);
+    width: 100vh;
+}
+
+.ml-subcard {
+    flex: 0 0 405px;
+    min-height: 375px;
+    position: relative; /*Put the label in the basket*/
+
+    margin: 0;
+    border-radius: 24px;
+    color: rgba(200, 200, 200, 0.9);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.ml-subcard a {
+  text-decoration: none;
+}
+
+.ml-subcard a:link, .ml-subcard a:hover, .ml-subcard a:visited {
+    color: inherit;
+}
+
+.ml-subcard a:active .ml-label { /*Little flash*/
+    color: rgb(228, 6, 206);
+}
+
+.ml-subcard .ml-img {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.ml-subcard .ml-img img {
+    width: 100%;
+    height: auto;           
+}
+
+.ml-subcard .ml-label {
+    position: absolute;
+    left: -0.6rem;
+    top: -9rem;
+    font-size: 30rem;
+}
+
+.ml-subcard .ml-label .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.4);
+    width: 100vh;
+}
+
+.iOS-subcard {
+    flex: 0 0 475px;
+    min-height: 375px;
+    position: relative; /*Put the label in the basket*/
+
+    margin: 0;
+    border-radius: 24px;
+    color: rgba(200, 200, 200, 0.9);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.iOS-subcard a {
+  text-decoration: none;
+}
+
+.iOS-subcard a:link, .iOS-subcard a:hover, .iOS-subcard a:visited {
+    color: inherit;
+}
+
+.iOS-subcard a:active .iOS-label { /*Little flash*/
+    color: rgb(228, 6, 206);
+}
+
+.iOS-subcard .iOS-img {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.iOS-subcard .iOS-img img {
+    width: 100%;
+    height: auto;          
+}
+
+.iOS-subcard .iOS-label {
+    position: absolute;
+    left: -0.3rem;
+    top: -9rem;
+    font-size: 30rem;
+    
+    z-index: 1;
+}
+
+.iOS-subcard .iOS-label .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.4);
+    width: 100vh;
+}
+
+.skill-card {
+    max-width: var(--width-match);
+    min-height: 25vh;
+    margin: 0 auto 2rem; /*Put space beneath it*/
+    border-radius: 24px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 2rem;
+    background: white;
+    font-family: "Playfair Display";
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.skill-header h1 {
+    font-size: 3.75rem;
+    margin: 0;
+}
+
+.back-button {
+  padding: 0.5rem 0.9rem;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px !important;  
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  /*Center the house*/
+  transform: translateY(-3px);
+}
+/*very cool: https://developers.google.com/fonts/docs/material_symbols#:~:text=.material%2Dsymbols,ltr%3B%0A%7D*/
+
+.home-link { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white !important;   
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff00ff, #0000ff);
+    border: 2px white;
+}
+
+
+.app-card {
+    max-width: min(1210px, 90%);
+    min-height: 100vh;
+    margin: 0 auto 2rem;          
+    border-radius: 24px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 2rem;
+    background: white;
+    font-family: "Playfair Display";
+}
+
+.app-card a {
+    text-decoration: underline;
+}
+
+.app-card a:link, .app-card a:hover, .app-card a:visited {
+    color: #8706c0;
+}
+
+.app-card a:active { /*Little flash*/
+    color: rgb(228, 6, 206);
+}
+
+.app-gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;  
+    overflow-x: auto;  /*For the phones*/
+    overflow-y: hidden;
+    scrollbar-gutter: stable;
+}
+
+.app-card-canvas {
+    height: 80vh;
+    width: 35vh;
+    margin: 0 auto;
+    flex: 0 0 35vh;
+    position: relative; /*Put the img in the basket*/
+    border-radius: clamp(50px, 6rem, 30px);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.app-card-canvas .app-img {
+    z-index: 0;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.app-card-canvas .app-img img {
+    width: 100%;
+    height: auto;    
+    border-radius: inherit;    
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.app-code {
+    max-width: min(1210px, 90%);
+    min-height: 80vh;
+    margin: 0 auto;          
+    border-radius: 24px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 2rem;
+    background: white;
+    font-family: "Playfair Display";
+}
+
+.app-code a {
+    text-decoration: underline;
+}
+
+.app-code a:link, a:hover, a:visited {
+    color: #8706c0;
+}
+
+.app-code a:active { /*Little flash*/
+    color: rgb(228, 6, 206);
+}
+
+.app-code-canvas {
+    height: 80vh;
+    width: 110vh;
+    flex: 0 0 110vh; 
+    position: relative; /*Put the img in the basket*/
+    margin: 0 auto;
+    border-radius: clamp(30px, 6rem, 30px);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.app-code-canvas .app-img {
+    z-index: 0;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.app-code-canvas .app-img img {
+    width: 100%;
+    height: auto;    
+    border-radius: inherit;    
+}
+
+

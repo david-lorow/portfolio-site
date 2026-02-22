@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--Y'all'ready know-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>David Lorow</title>
+    <link rel="stylesheet" href="/Assets/css/style.css" />
+    <!--Different fav icons-->
+    <link rel="icon" href="/Assets/img/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/img/favicon_io/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Assets/img/favicon_io/favicon-16.png">
+    <!--My preferred fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">   
+    <!--Little home icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home&display=block">
+    <!--Markdown to HTML-->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  </head>
+
+  <body>
+    <main class="skill-card">
+      <div class="skill-header">
+        <h1>Machine Learning</h1>
+        <a class="home-link" href="/index.html">
+        <span class="material-symbols-outlined">home</span>
+        </a>
+      </div>
+    
+      <p>
+        Built a complete machine learning pipeline in <strong>Python</strong> to train a linear classifier model on the MNIST dataset, applying fundamental ML concepts including cross-entropy loss, 
+        backpropagation, and bias-variance tradeoff. The model achieved 90% accuracy. 
+        Leveraged <strong>PyTorch</strong> for model architecture and training, managing DataLoaders, and implementing L2 regularization via weight decay. 
+        Conducted greedy 1D hyperparameter search across learning rate, weight decay, and batch size to optimize model performance. 
+        Applied ML best practices including GPU acceleration (CUDA/Apple Silicon MPS), fixed-seed reproducibility, 
+        and train/validation/test splitting. Visualized results using <strong>Matplotlib</strong> and <strong>Seaborn</strong>, including loss/accuracy curves and a 
+        confusion matrix. Documented the full mathematical foundation from logit computation to the SGD weight update rule
+         in a <strong>Jupyter Notebook</strong>.
+      </p>
+    </main>
+
+    <div class="app-card">
+      <h1>Check out the notebook: <a href="https://github.com/david-lorow/mnist-linear-classifier" target="_blank" rel="noopener noreferrer">MNIST Linear Classifier</a>, on GitHub</h1>
+      <figure>
+        <img src="/Assets/img/jupyter/preds.png">
+        <figcaption>In this image from the Jupyter Notebook, you can see the model's predicted labels for the digits vs their true labels.</figcaption>
+      </figure>
+      
+      
+      <div id="content"></div>
+      <script>
+        fetch('/Assets/misc/math.md')
+          .then(r => r.text())
+          .then(md => {
+            document.getElementById('content').innerHTML = marked.parse(md);
+            MathJax.typesetPromise();
+          });
+      </script>
+    </div>
+
+    <div class="app-code">
+      <h1>Predictions Summary</h2>
+      <figure>
+        <img src="/Assets/img/jupyter/conf_mat.png">
+        <figcaption>Like the previous image, this one provides more insights into the model's predictions. 
+          The model achieved around 90% accuracy every run (of the whole notebook) but you can notice small deviations in the heatmap. </figcaption>
+      </figure>
+    </div>
+
+    
+  </body>
