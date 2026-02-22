@@ -28,13 +28,25 @@ figure {
 /*Landing page-------------------------------------------------------*/
 .card {
     max-width: min(1210px, 90%);
-    min-height: 70vh;
+    min-height: 70vw;
     margin: 0 auto;          
     border-radius: 24px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
     padding: 2rem;
     background: white;
     font-family: "Playfair Display";
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;  
+}
+
+.linkedin-link img {
+    width: 60px;
+    height: auto;
 }
 
 .card a:link, .card a:hover, .card a:visited {
@@ -121,7 +133,7 @@ figure {
     position: absolute;
     inset: 0;
     background: rgba(5, 5, 5, 0.3);
-    width: 100vh;
+    width: 100vw;
 }
 
 .ml-subcard {
@@ -172,7 +184,7 @@ figure {
     position: absolute;
     inset: 0;
     background: rgba(20, 20, 20, 0.4);
-    width: 100vh;
+    width: 100vw;
 }
 
 .iOS-subcard {
@@ -225,12 +237,12 @@ figure {
     position: absolute;
     inset: 0;
     background: rgba(20, 20, 20, 0.4);
-    width: 100vh;
+    width: 100vw;
 }
 
 .skill-card {
     max-width: var(--width-match);
-    min-height: 25vh;
+    min-height: auto;
     margin: 0 auto 2rem; /*Put space beneath it*/
     border-radius: 24px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
@@ -249,6 +261,7 @@ figure {
 .skill-header h1 {
     font-size: 3.75rem;
     margin: 0;
+    min-width: 0;
 }
 
 .back-button {
@@ -284,12 +297,15 @@ figure {
     border-radius: 50%;
     background: linear-gradient(135deg, #ff00ff, #0000ff);
     border: 2px white;
+    flex-shrink: 0;/*No shrink*/
 }
+
+/*iOS stuff---------------------------------------------------------------*/
 
 
 .app-card {
     max-width: min(1210px, 90%);
-    min-height: 100vh;
+    min-height: 60vw;
     margin: 0 auto 2rem;          
     border-radius: 24px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
@@ -320,12 +336,12 @@ figure {
 }
 
 .app-card-canvas {
-    height: 80vh;
-    width: 35vh;
+    height: auto;
+    width: 20vw;
     margin: 0 auto;
-    flex: 0 0 35vh;
+    flex: 0 0 20vw;
     position: relative; /*Put the img in the basket*/
-    border-radius: clamp(50px, 6rem, 30px);
+    border-radius: clamp(16px, 3vw, 40px);
     padding: 0.25rem;
     font-family: "Oswald";
 
@@ -349,8 +365,8 @@ figure {
 
 
 .app-code {
-    max-width: min(1210px, 90%);
-    min-height: 80vh;
+    max-width: min(80vw, 90%);
+    min-height: auto;
     margin: 0 auto;          
     border-radius: 24px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.35);
@@ -372,9 +388,9 @@ figure {
 }
 
 .app-code-canvas {
-    height: 80vh;
-    width: 110vh;
-    flex: 0 0 110vh; 
+    height: auto;
+    width: 80vw;
+    flex: 0 0 80vw; 
     position: relative; /*Put the img in the basket*/
     margin: 0 auto;
     border-radius: clamp(30px, 6rem, 30px);
@@ -396,4 +412,54 @@ figure {
     border-radius: inherit;    
 }
 
+/*ML-------------------------------------------------------------*/
 
+.ml-img-canvas {
+    height: auto;
+    width: 60vw;
+    flex: 0 0 60vw; 
+    position: relative; /*Put the img in the basket*/
+    margin: 0 auto;
+    border-radius: clamp(30px, 6rem, 30px);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.ml-img-canvas .app-img {
+    z-index: 0;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.ml-img-canvas .app-img img {
+    width: 100%;
+    height: auto;    
+    border-radius: inherit;    
+}
+
+.ml-heatmap-canvas {
+    height: 45vw;
+    width: 50vw;
+    flex: 0 0 50vw; 
+    position: relative; /*Put the img in the basket*/
+    margin: 0 auto;
+    border-radius: clamp(30px, 6rem, 30px);
+    padding: 0.25rem;
+    font-family: "Oswald";
+
+    overflow: hidden;
+}
+
+.ml-heatmap-canvas .app-img {
+    z-index: 0;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.ml-heatmap-canvas .app-img img {
+    width: 100%;
+    height: auto;    
+    border-radius: inherit;    
+}
